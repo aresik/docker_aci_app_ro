@@ -17,16 +17,16 @@ nano aci_app_ro/oneaciapp.py
 # create Dockerfile
 nano Dockerfile
 
-FROM ubuntu:18.04
-RUN apt-get update -y
-RUN apt-get install -y apt-utils
-RUN apt-get install -y python-pip
-RUN apt-get install -y python-dev build-essential
-COPY aci_app_ro /aci_app_ro
-WORKDIR /aci_app_ro
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["oneaciapp.py"]
+FROM ubuntu:18.04  
+RUN apt-get update -y  
+RUN apt-get install -y apt-utils  
+RUN apt-get install -y python-pip  
+RUN apt-get install -y python-dev build-essential  
+COPY aci_app_ro /aci_app_ro  
+WORKDIR /aci_app_ro  
+RUN pip install -r requirements.txt  
+ENTRYPOINT ["python"]  
+CMD ["oneaciapp.py"]  
 
 # build the container
 docker build -t aci_app_ro:latest
